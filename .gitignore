@@ -24,3 +24,5 @@ yarn-error.log*
 /android/local.properties
 /android/app/build/
 /android/build/
+/android/app/app.iml
+/android/reactnativehm.iml
