@@ -4,13 +4,14 @@
   "private": true,
   "devDependencies": {
     "babel-preset-react-native-stage-0": "^1.0.1",
-    "jest-expo": "23.0.0",
-    "react-test-renderer": "16.0.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
+    "jest-expo": "23.0.0",
+    "node-sass": "^4.7.2",
     "react-router-dom": "^4.2.2",
+    "react-test-renderer": "16.0.0",
     "sass-loader": "^6.0.6"
   },
   "scripts": {
@@ -20,7 +21,11 @@
     "test": "node node_modules/jest/bin/jest.js --watch",
     "web": "node web/scripts/start.js",
     "build": "node web/scripts/build.js",
-    "testweb": "node web/scripts/test.js --env=jsdom"
+    "testweb": "node web/scripts/test.js --env=jsdom",
+    "ofla":
+      "react-native bundle --entry-file ./native/index.js --bundle-output ./android/app/src/main/assets/index.android.jsbundle --platform android --assets-dest ./android/app/src/main/res/ --dev false",
+    "ofli":
+      "react-native bundle --entry-file ./native/index.js --bundle-output ./ios/bundle/index.ios.jsbundle --platform ios --assets-dest ./ios/bundle --dev false"
   },
   "jest": {
     "preset": "jest-expo",

@@ -19,3 +19,8 @@ yarn-error.log*
 .vscode/
 .idea/
 /android/.gradle
+/android/.idea/
+/andriod/android.iml
+/android/local.properties
+/android/app/build/
+/android/build/
