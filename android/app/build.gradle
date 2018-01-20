@@ -73,7 +73,20 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    entryFile: "native/index.js"
+    entryFile: "native/index.js",
+    bundleAssetName: "index.android.bundle",
+     bundleInDebug: true,
+      bundleInRelease: true,
+      jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
+      jsBundleDirRelease: "$buildDir/intermediates/assets/release",
+     resourcesDirDebug: "$buildDir/intermediates/res/merged/debug",
+      resourcesDirRelease: "$buildDir/intermediates/res/merged/release",
+
+    inputExcludes: ["android/**", "ios/**"],
+
+    nodeExecutableAndArgs: ["node"],
+
+    extraPackagerArgs: []
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
