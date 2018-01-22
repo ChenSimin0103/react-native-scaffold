@@ -40,7 +40,7 @@
 
 2. 项目使用`ESlint`检查`JS`语法规范，采用`Airbnb`规范，详情可参见<https://github.com/airbnb/javascript/tree/master/react> 部分规范条例可根据实际项目做调整；
 
-3. 函数必须写注释，参见`jsdoc`写法。`JSX`中注释如以下例子：
+3. 函数必须写注释，参见`jsdoc`写法<http://usejsdoc.org/>。`JSX`中注释如以下例子：
 ![comment](/public/img/comment.jpg)
 
 
