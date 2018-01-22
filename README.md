@@ -5,7 +5,7 @@
 
 ## 使用
 
-1. 必须有`nodejs`环境，然后再安装`yarn`（可选）
+1. 必须有`nodejs`环境，然后再安装`yarn`（可选）<https://yarnpkg.com/en/docs/install>
 2. 项目初始化请运行`yarn install`或`yarn`，如果是`npm`请执行`npm install`
 3. 确保依赖安装正确，合理使用梯子
 
