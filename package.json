@@ -22,9 +22,9 @@
     "build": "node web/scripts/build.js",
     "testweb": "node web/scripts/test.js --env=jsdom",
     "ofla":
-      "react-native bundle --entry-file ./native/index.js --bundle-output ./android/app/src/main/assets/index.android.jsbundle --platform android --assets-dest ./android/app/src/main/res/ --dev false",
+      "react-native bundle --entry-file ./native/index.js --bundle-output ./android/app/src/main/assets/index.android.bundle --platform android --assets-dest ./android/app/src/main/res/ --dev false",
     "ofli":
-      "react-native bundle --entry-file ./native/index.js --bundle-output ./ios/bundle/index.ios.jsbundle --platform ios --assets-dest ./ios/bundle --dev false"
+      "react-native bundle --entry-file ./native/index.js --bundle-output ./ios/bundle/index.ios.bundle --platform ios --assets-dest ./ios/bundle --dev false"
   },
   "jest": {
     "preset": "jest-expo",
