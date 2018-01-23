@@ -1,8 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import 'babel-polyfill';
+import 'fetch-detector';
+import 'fetch-ie8';
+import { AppRegistry } from 'react-native';
+import App from './../src/index';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+AppRegistry.registerComponent('reactnativehm', () => App);
+
+const app = document.createElement('div');
+document.body.appendChild(app);
+
+AppRegistry.runApplication('reactnativehm', {
+  rootTag: app
+});
