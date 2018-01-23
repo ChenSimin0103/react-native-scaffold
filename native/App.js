@@ -11,12 +11,27 @@ const styles = StyleSheet.create({
 });
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log('----constructor----');
+    this.state = {
+      count: 0,
+    };
+  }
   render() {
+    console.log('----render----');
     return (
       <View style={styles.container}>
         <Text>Open up App.js to start working on your app!</Text>
         <Text>Shake your phone to open the developer menu.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Text
+          onPress={() => {
+            this.setState({
+              count: this.state.count + 1,
+            });
+          }}
+        >点击此处</Text>
+        <Text>被单击了{this.state.count}次</Text>
       </View>
     );
   }
