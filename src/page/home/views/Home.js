@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Image, Dimensions } from 'react-native';
+import Title from './Title';
 
 const { width, height } = Dimensions.get('window');
 
@@ -12,14 +13,7 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.home}>
-        <Image
-          style={styles.category}
-          source={require('./../../../assets/img/Category.svg')}
-        />
-        <Image
-          style={styles.category}
-          source={require('./../../../assets/img/search.svg')}
-        />
+        <Title />
       </View>
     );
   }
@@ -33,10 +27,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between'
-  },
-  category: {
-    width: 50,
-    height: 50
   }
 });
 
