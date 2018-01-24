@@ -1,22 +1,46 @@
-import AcControl from './../view/ac-control/ac-control'
-import Order from './../view/order/order'
-import OrderList from './../view/order-list/order-list'
-import StatusQuery from './../view/status-query/status-query'
-import App from './../app'
-import React from 'react'
-import {Route, Switch} from 'react-router-dom'
+import React from 'react';
+import ReactNative from 'react-native';
+import { Platform, BackHandler } from 'react-native';
+import * as HomeComponent from './../page/home/views/Home';
+import connectComponent from './../util/connectComponent';
+import * as CustomSceneConfigs from './../util/sceneConfig';
 
-class HmRouter extends React.Component {
-    render() {
-        return (
-            <Switch>
-                <Route path='/ac-control' component={AcControl}></Route>
-                <Route path='/order' component={Order}></Route>
-                <Route path='/order-list' component={OrderList}></Route>
-                <Route path='/status-query' component={StatusQuery}></Route>
-            </Switch>
-        );
+const Home = connectComponent(HomeComponent);
+
+const { SceneConfigs } = ReactNative;
+
+class Router {
+  constructor(navigator) {
+    this.navigator = navigator;
+    if (Platform.OS === 'android') {
+      BackHandler.addEventListener('hardwareBackPress', () => {
+        const routesList = this.navigator.getCurrentRoutes();
+        const currentRoutes = routesList[routesList.length - 1];
+        if (currentRoutes.name !== 'home') {
+          navigator.pop();
+          return true;
+        }
+        return false;
+      });
     }
+  }
+
+  push(props = {}, route) {
+    let routesList = this.navigator.getCurrentRoutes();
+    let nextIndex = routesList[routesList.length - 1].index + 1;
+    route.props = props;
+    route.index = nextIndex;
+    route.sceneConfig = route.sceneConfig
+      ? route.sceneConfig
+      : CustomSceneConfigs.customFloatFromRight;
+    route.id = _.uniqueId();
+    route.component = connectComponent(route.component);
+    this.navigator.push(route);
+  }
+
+  pop() {
+    this.navigator.pop();
+  }
 }
 
-module.exports = HmRouter;
+export default Router;
