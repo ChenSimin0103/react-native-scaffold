@@ -1,4 +1,4 @@
-import * as types from './../types';
+import * as types from "./../types";
 
 const sequenceList = {};
 const minPendingTime = 500;
@@ -14,14 +14,14 @@ export default function({ dispatch }) {
     const { meta = {}, payload } = action;
     const { sequence = {}, tab } = meta;
     if (action.type === types.UPDATE_TOPICS_BY_TAB) {
-      if (sequence.type === 'start') {
+      if (sequence.type === "start") {
         sequenceList[sequence.id] = {
           start: new Date().getTime()
         };
         return next(action);
       }
 
-      if (sequence.type === 'next' && sequenceList[sequence.id]) {
+      if (sequence.type === "next" && sequenceList[sequence.id]) {
         const start = sequenceList[sequence.id].start;
         const end = new Date().getTime();
         const leftTime = minPendingTime - (end - start);

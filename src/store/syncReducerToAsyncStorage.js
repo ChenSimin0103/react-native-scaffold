@@ -1,5 +1,5 @@
-import { isFSA } from 'flux-standard-action';
-import * as types from './../types';
+import { isFSA } from "flux-standard-action";
+import * as types from "./../types";
 
 export default ({ dispatch, getState }) => next => action => {
   if (!isFSA(action)) {
@@ -20,7 +20,7 @@ export default ({ dispatch, getState }) => next => action => {
     }
   }
 
-  if (!sync || sequence.type === 'start' || error) {
+  if (!sync || sequence.type === "start" || error) {
     return next(action);
   }
 
