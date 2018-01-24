@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import LottieView from 'lottie-react-native';
 import {
   StyleSheet,
   Text,
   View,
   Image,
-  Dimensions,
-  Animated
+  Dimensions
 } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
@@ -15,15 +13,7 @@ export default class Title extends Component {
     super(props);
     this.state = {
       titleName: 'Home',
-      progress: new Animated.Value(0)
     };
-  }
-
-  _clickMenu() {
-    Animated.timing(this.state.progress, {
-      toValue: 1,
-      duration: 500
-    }).start();
   }
 
   render() {
@@ -32,12 +22,7 @@ export default class Title extends Component {
         <Image
           style={styles.category}
           source={require('./../../../assets/img/Category.png')}
-        />
-        <LottieView
-          onPress={this._clickMenu}
-          source={require('./../../../assets/lottie/menu.json')}
-          progress={this.state.progress}
-        />
+        />ategory
         <Text style={styles.text}>{this.state.titleName}</Text>
         <Image
           style={styles.search}
