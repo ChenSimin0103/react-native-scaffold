@@ -7,26 +7,26 @@ import {
   Dimensions
 } from 'react-native';
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 export default class Title extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      titleName: 'Home',
+      titleName: "Home"
     };
   }
 
   render() {
     return (
-      <View style={styles.tilte}>
+      <View style={styles.title}>
         <Image
           style={styles.category}
-          source={require('./../../../assets/img/Category.png')}
-        />ategory
+          source={require("./../../../assets/img/Category.png")}
+        />
         <Text style={styles.text}>{this.state.titleName}</Text>
         <Image
           style={styles.search}
-          source={require('./../../../assets/img/search.png')}
+          source={require("./../../../assets/img/search.png")}
         />
       </View>
     );
@@ -34,19 +34,18 @@ export default class Title extends Component {
 }
 
 const styles = StyleSheet.create({
-  tilte: {
+  title: {
     width: width,
     height: 50,
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    flexDirection: "row",
+    justifyContent: "space-between"
   },
   text: {
     fontSize: 20,
-    textAlignVertical: 'center',
+    textAlignVertical: "center",
     height: 25,
     marginTop: 8,
-    color: '#ffffff'
+    color: "#ffffff"
   },
   category: {
     width: 25,

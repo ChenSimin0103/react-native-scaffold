@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, Image, Dimensions } from 'react-native';
-import Title from './Title';
+import React, { Component } from "react";
+import { StyleSheet, View, Image, Dimensions } from "react-native";
+import Title from "./Title";
+import Recommend from "./Recommend";
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 
 export default class Home extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class Home extends Component {
     return (
       <View style={styles.home}>
         <Title />
+        <Recommend />
       </View>
     );
   }
@@ -21,12 +23,10 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
   home: {
-    backgroundColor: '#2A2B33',
+    backgroundColor: "#2A2B33",
     width: width,
     height: height,
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between'
+    flexDirection: "column"
   }
 });
 
